@@ -1,17 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class PlaceOnPlane_Script : MonoBehaviour
+public class PlaceOnPlaneScript : MonoBehaviour
 {
     ARRaycastManager aRRaycastManager;
-    private Vector2 touchPosition;
+    Vector2 touchePosition;
 
     public GameObject scenePrefab;
 
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
-
+    
     private void Awake()
     {
         aRRaycastManager = GetComponent<ARRaycastManager>();
@@ -20,11 +21,11 @@ public class PlaceOnPlane_Script : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 )
         {
-            touchPosition = Input.GetTouch(0).position;
+            touchePosition = Input.GetTouch(0).position;
 
-            if (aRRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
+            if (aRRaycastManager.Raycast(touchePosition, hits, TrackableType.PlaneWithinPolygon))
             {
                 var hitPose = hits[0].pose;
 

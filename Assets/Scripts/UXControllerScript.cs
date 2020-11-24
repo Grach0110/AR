@@ -1,13 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-public class UX_Controller_Script : MonoBehaviour
+public class UXControllerScript : MonoBehaviour
 {
     private ARPlaneManager aRPlaneManager;
     public GameObject handAnim;
-
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class UX_Controller_Script : MonoBehaviour
         aRPlaneManager.planesChanged += aRPlaneManager_planesChanged;
     }
 
-    void aRPlaneManager_planesChanged(ARPlanesChangedEventArgs obj)
+    private void aRPlaneManager_planesChanged(ARPlanesChangedEventArgs obj)
     {
         foreach (var item in obj.added)
         {
