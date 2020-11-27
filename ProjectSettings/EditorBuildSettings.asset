@@ -9,5 +9,9 @@ EditorBuildSettings:
     path: Assets/Scene/Scene.unity
     guid: b8febe760ee974b9993741485672425c
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0c973adfc59d245bd83d82f488515e5f,
+      type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 5f553efe791a8448c8e0d468d07e56bf,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5c7ec52dc766142429036653398f32fe,
       type: 2}
